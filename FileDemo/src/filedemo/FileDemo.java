@@ -48,8 +48,21 @@ public class FileDemo {
       System.out.println("An error occurred.");
       e.printStackTrace();
     }
+
+       // creating a sample file to show the delete operation
+         try {
+      File myObj = new File("sample.txt"); // Creating a  File object
+      if (myObj.createNewFile()) {   // Checking if the file does not exist
+        System.out.println("File created: " + myObj.getName());
+      } else {
+        System.out.println("File already exists.");// If file already exists
+      }
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    } 
          // Step 4: Deleting a file
-          File myObj = new File("new.txt"); // Creating a File object
+          File myObj = new File("sample.txt"); // Creating a File object
     if (myObj.delete()) { // Checking if file deletion is successful
       System.out.println("Deleted the file: " + myObj.getName());
     } else {
